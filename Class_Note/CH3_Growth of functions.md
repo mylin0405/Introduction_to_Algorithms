@@ -72,5 +72,8 @@ It's done with c1=2, c2=3 and n0=100
 #### Remark
 We may often write f(n)= Θ(g(n)), it means that f(n) ∈ Θ(g(n)) and actually it also means g(n) ∈ Θ(f(n)) 
 
-### Theorem2.
+### Theorem2
 f(n) ∈ Θ(g(n)) if and only if g(n) ∈ Θ(f(n))
+
+### Theorem3
+For any two functions f(n) and g(n), we have f(n)= Θ(g(n)) if and ony if f(n)=O(g(n)) and f(n)=Ω(g(n))
