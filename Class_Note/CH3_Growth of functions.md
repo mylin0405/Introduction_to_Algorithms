@@ -48,11 +48,11 @@ f(n) ∈ Ω(g(n)) means that g(n) is an asymptotic lower bound for f(n)
 #### Remark
 best-case running time
 
-### Therorm between O and Ω
+### Therorm 1
 f(n) ∈ O(g(n)) if and only if g(n) ∈ Ω(f(n))
 
 ### Big-Θ
-Definition: For given a function g(n), we denote by  Θ(g(n)) the set of functions
+Definition: For given a function g(n), we denote by Θ(g(n)) the set of functions
 ```c
  Θ(g(n))={f(n): there exist positive constants c1, c2 and n0 such that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n>=n0}
 ```
@@ -72,8 +72,39 @@ It's done with c1=2, c2=3 and n0=100
 #### Remark
 We may often write f(n)= Θ(g(n)), it means that f(n) ∈ Θ(g(n)) and actually it also means g(n) ∈ Θ(f(n)) 
 
-### Theorem2
+### Theorem 2
 f(n) ∈ Θ(g(n)) if and only if g(n) ∈ Θ(f(n))
 
-### Theorem3
+### Theorem 3
 For any two functions f(n) and g(n), we have f(n)= Θ(g(n)) if and ony if f(n)=O(g(n)) and f(n)=Ω(g(n))
+
+### Small o
+Definition: For given a function g(n), we denote by o(g(n)) the set of functions
+```c
+ o(g(n))={f(n): for any positive c, there exists a constant n0 such that o <= f(n) < c*g(n), for all n >= n0}
+```
+The intuition behind the def is that the function betweens insignificant relative to g(n) as n→∞.  
+That is, lim(n→∞)(f(n)/g(n)) = 0.  
+* Informally, o is like **<**
+
+### Small ω 
+Definition: For given a function g(n), we denote by ω(g(n)) the set of functions
+```c
+ ω(g(n))={f(n): for any positive c, there exists a constant n0 such that o <= c*g(n) < f(n), for all n >= n0}
+```
+The intuition behind the def is that the function becomes arbitary large relative to g(n) as n→∞.  
+That is, lim(n→∞)(f(n)/g(n)) = 0.  
+* Informally, ω is like **>**
+
+### Therorm 4 
+f(n) ∈ o(g(n)) if and only if g(n) ∈ ω(f(n))
+
+### Summarize
+```c
+lim(n→∞)(f(n)/g(n)) = { 0 => f(n) ∈ o(g(n))     , 0 or c => f(n) ∈ O(g(n))
+                        c => f(n) ∈ Θ(g(n))     , c or ∞ => f(n) ∈ Ω(g(n))
+                        ∞ => f(n) ∈ ω(g(n))
+ ```
+ 
+ 
+
